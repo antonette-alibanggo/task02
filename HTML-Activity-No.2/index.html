@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMCC-CCIS Week 2025</title>
+
+```
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f5f1;
+        color: #26352a;
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: #087f23;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        background-color: #064d18;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 14px 18px;
+    }
+
+    nav a:hover {
+        background-color: #087f23;
+    }
+
+    main {
+        width: 90%;
+        max-width: 1100px;
+        margin: 30px auto;
+    }
+
+    section,
+    aside {
+        background-color: white;
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+        color: #087f23;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        color: #096b20;
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 25px;
+    }
+
+    .event-image {
+        width: 100%;
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+
+    .info {
+        background-color: #e8f5ea;
+        border-left: 5px solid #087f23;
+    }
+
+    .info p {
+        margin-bottom: 12px;
+    }
+
+    ul {
+        padding-left: 25px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th,
+    td {
+        border: 1px solid #b7cdbb;
+        padding: 12px;
+    }
+
+    th {
+        background-color: #087f23;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f1f8f2;
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        border: none;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+
+    form {
+        display: grid;
+        gap: 10px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: normal;
+    }
+
+    .checkbox input {
+        width: auto;
+    }
+
+    button {
+        padding: 11px 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .submit {
+        background-color: #087f23;
+        color: white;
+    }
+
+    .reset {
+        background-color: #777;
+        color: white;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    #faq-content {
+        display: none;
+    }
+
+    .faq {
+        background-color: #eef7ef;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-left: 4px solid #087f23;
+    }
+
+    pre {
+        background-color: #202b22;
+        color: #d9f7df;
+        padding: 15px;
+        overflow-x: auto;
+        border-radius: 6px;
+        margin: 15px 0;
+    }
+
+    code {
+        background-color: #e5e5e5;
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+
+    pre code {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .url {
+        background-color: #f2f2f2;
+        padding: 15px;
+        margin: 15px 0;
+        word-break: break-all;
+        font-family: monospace;
+    }
+
+    #success {
+        display: none;
+        background-color: #d9f5df;
+        color: #126321;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    footer {
+        background-color: #064d18;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    footer a {
+        color: #b8f5c4;
+    }
+
+    .symbols {
+        background-color: #f4f8f4;
+        padding: 15px;
+        margin-top: 10px;
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+        .overview {
+            grid-template-columns: 1fr;
+        }
+
+        nav a {
+            padding: 10px;
+        }
+
+        main {
+            width: 95%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        section,
+        aside {
+            padding: 18px;
+        }
+
+        .buttons {
+            flex-direction: column;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <h1>SMCC-CCIS Week 2025 – Campus Event Showcase 🎓🎉</h1>
+    <p>Celebrating innovation, technology, and collaboration across the campus.</p>
+</header>
+
+<nav>
+    <a href="#overview">Overview</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#location">Location</a>
+    <a href="#registration">Registration</a>
+    <a href="#faq">FAQ</a>
+    <a href="#tech-demo">Tech Demo</a>
+</nav>
+
+<main>
+
+    <section id="overview">
+        <div class="overview">
+
+            <article>
+                <h2>Event Overview</h2>
+
+                <img src="pic1.png"
+                     alt="SMCC-CCIS Week 2025 Banner"
+                     class="event-image">
+
+                <p>
+                    <strong>SMCC-CCIS Week 2025</strong> is a campus event
+                    celebrating creativity, innovation, information technology,
+                    and collaboration among students and faculty.
+                </p>
+
+                <p>
+                    Students can participate in competitions, technology
+                    demonstrations, exhibitions, talks, and other activities.
+                </p>
+
+                <h3>Event Highlights</h3>
+
+                <ul>
+                    <li>💻 Coding Hackathon</li>
+                    <li>🤖 Robotics and IoT Exhibition</li>
+                    <li>🔐 Cybersecurity Awareness Session</li>
+                    <li>🧠 Tech Quiz Bowl</li>
+                    <li>🏆 Project Showcase and Awarding Ceremony</li>
+                </ul>
+            </article>
+
+            <aside class="info">
+                <h2>Event Information</h2>
+
+                <p>
+                    <strong>🏫 Institution:</strong><br>
+                    SAINT MICHAEL COLLEGE OF CARAGA
+                </p>
+
+                <p>
+                    <strong>📍 Address:</strong><br>
+                    Atupan St., Brgy. 4, Nasipit,
+                    Agusan del Norte 8602, Philippines
+                </p>
+
+                <p>
+                    <strong>🌐 Website:</strong><br>
+                    www.smccnasipit.edu.ph
+                </p>
+
+                <p>
+                    <strong>☎ Tel. Nos.:</strong><br>
+                    085 300-2932
+                </p>
+
+                <p>
+                    <strong>🎓 Organizer:</strong><br>
+                    College of Computing and Information Sciences
+                </p>
+            </aside>
+
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2>Event Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Activity</th>
+                <th>Highlights</th>
+            </tr>
+
+            <tr>
+                <td>Day 1</td>
+                <td>Opening Program</td>
+                <td>Opening ceremony and keynote talks</td>
+            </tr>
+
+            <tr>
+                <td>Day 2</td>
+                <td>Coding Hackathon</td>
+                <td>Programming and problem-solving competition</td>
+            </tr>
+
+            <tr>
+                <td>Day 3</td>
+                <td>Robotics and IoT Exhibition</td>
+                <td>Student technology demonstrations</td>
+            </tr>
+
+            <tr>
+                <td>Day 4</td>
+                <td>Cybersecurity Awareness Session</td>
+                <td>Cybersecurity talks and activities</td>
+            </tr>
+
+            <tr>
+                <td>Day 5</td>
+                <td>Project Showcase</td>
+                <td>Project presentations and 🏆 awarding ceremony</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="location">
+        <h2>Event Location</h2>
+
+        <p>
+            The event will be held at Saint Michael College of Caraga,
+            Atupan St., Brgy. 4, Nasipit, Agusan del Norte.
+        </p>
+
+        <iframe
+            src="https://www.google.com/maps?q=Saint+Michael+College+of+Caraga,+Nasipit,+Agusan+del+Norte&output=embed"
+            title="Saint Michael College of Caraga Map">
+        </iframe>
+    </section>
+
+    <section id="registration">
+        <h2>Event Registration Form</h2>
+
+        <p>Fill out the form below to register for the event.</p>
+
+        <br>
+
+        <form id="registration-form">
+
+            <label for="fullname">Full Name:</label>
+            <input type="text"
+                   id="fullname"
+                   name="fullname"
+                   placeholder="Enter your full name"
+                   required
+                   minlength="3"
+                   maxlength="100">
+
+            <label for="email">Email Address:</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="example@email.com"
+                   required>
+
+            <label for="student-id">Student ID:</label>
+            <input type="text"
+                   id="student-id"
+                   name="student-id"
+                   placeholder="Enter your Student ID"
+                   required
+                   pattern="[0-9]{6,12}"
+                   title="Student ID must contain 6 to 12 digits">
+
+            <label for="year-level">Year Level:</label>
+
+            <select id="year-level"
+                    name="year-level"
+                    required>
+
+                <option value="">Select Year Level</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+
+            </select>
+
+            <label>Event to Join:</label>
+
+            <label class="checkbox">
+                <input type="checkbox"
+                       name="event"
+                       value="Coding Hackathon">
+                Coding Hackathon
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox"
+                       name="event"
+                       value="Tech Quiz Bowl">
+                Tech Quiz Bowl
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox"
+                       name="event"
+                       value="Project Showcase">
+                Project Showcase
+            </label>
+
+            <label for="message">Reason for Joining:</label>
+
+            <textarea id="message"
+                      name="message"
+                      rows="4"
+                      minlength="10"
+                      maxlength="500"
+                      placeholder="Why do you want to join?"
+                      required></textarea>
+
+            <div class="buttons">
+
+                <button type="submit" class="submit">
+                    Submit Registration
+                </button>
+
+                <button type="reset" class="reset">
+                    Clear Form
+                </button>
+
+            </div>
+
+            <div id="success">
+                Registration submitted successfully! Thank you for
+                joining SMCC-CCIS Week 2025. 🎓
+            </div>
+
+        </form>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <button type="button"
+                class="submit"
+                onclick="toggleFAQ()">
+            Toggle FAQ Visibility
+        </button>
+
+        <div id="faq-content">
+
+            <div class="faq">
+                <h3>Who can participate?</h3>
+                <p>
+                    Students of Saint Michael College of Caraga are
+                    encouraged to participate.
+                </p>
+            </div>
+
+            <div class="faq">
+                <h3>Is registration required?</h3>
+                <p>
+                    Yes. Students should complete the registration form
+                    for the activities they want to join.
+                </p>
+            </div>
+
+            <div class="faq">
+                <h3>What should I bring?</h3>
+                <p>
+                    Bring your student ID and any materials needed for
+                    your chosen activity.
+                </p>
+            </div>
+
+            <div class="faq">
+                <h3>Where is the event?</h3>
+                <p>
+                    The event will be held at Saint Michael College
+                    of Caraga in Nasipit, Agusan del Norte.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tech-demo">
+        <h2>Tech Demo</h2>
+
+        <p>
+            This is a simple example of HTML and JavaScript.
+        </p>
+
+        <pre><code>&lt;button onclick="showMessage()"&gt;
+Click Me
+```
+
+</button>
+
+<script>
+function showMessage() {
+alert("Welcome to SMCC-CCIS Week 2025!");
+}
+</script></code></pre>
+
+```
+        <button type="button"
+                class="submit"
+                onclick="showDemoMessage()">
+            Run JavaScript Demo
+        </button>
+
+        <h3>Computer Code</h3>
+
+        <p>
+            The <code>&lt;code&gt;</code> element is used to display
+            computer code such as
+            <code>console.log("Hello World");</code>.
+        </p>
+
+        <h3>HTML Entities, Symbols, and Emojis</h3>
+
+        <div class="symbols">
+            &copy; 2025 SMCC &nbsp; | &nbsp;
+            5 &lt; 10 &nbsp; | &nbsp;
+            10 &gt; 5 &nbsp; | &nbsp;
+            &amp; &nbsp; | &nbsp;
+            🎓 💻 🤖 🔐 🏆
+        </div>
+    </section>
+
+    <section>
+        <h2>Registration URL Encoding Example</h2>
+
+        <p>
+            URL encoding is used to represent special characters in a URL.
+        </p>
+
+        <div class="url">
+            https://myschool.edu/events/register?event=SMCC%20CCIS%20Week%202025&amp;section=A
+        </div>
+
+        <p>
+            <strong>%20</strong> represents a space in a URL.
+            For example, <code>SMCC%20CCIS</code> means
+            <strong>SMCC CCIS</strong>.
+        </p>
+    </section>
+
+    <section>
+        <h2>HTML vs XHTML Example</h2>
+
+        <h3>HTML</h3>
+
+        <pre><code>&lt;img src="images/logo.png" alt="Event Logo"&gt;</code></pre>
+
+        <h3>XHTML</h3>
+
+        <pre><code>&lt;img src="images/logo.png" alt="Event Logo" /&gt;</code></pre>
+
+        <p>
+            XHTML uses stricter syntax. Empty elements such as
+            <code>&lt;img&gt;</code> are closed using <code>/&gt;</code>.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Saint Michael College of Caraga – CCIS Week</p>
+    <p>
+        Atupan St., Brgy. 4, Nasipit, Agusan del Norte 8602, Philippines
+    </p>
+    <p>
+        Website: www.smccnasipit.edu.ph |
+        Tel. Nos. 085 300-2932
+    </p>
+    <p>🎓 Innovation • Technology • Collaboration 🎉</p>
+</footer>
+
+<script>
+    function toggleFAQ() {
+        let faq = document.getElementById("faq-content");
+
+        if (faq.style.display === "block") {
+            faq.style.display = "none";
+        } else {
+            faq.style.display = "block";
+        }
+    }
+
+    function showDemoMessage() {
+        alert("Welcome to SMCC-CCIS Week 2025! 🎓💻");
+    }
+
+    document.getElementById("registration-form").addEventListener(
+        "submit",
+        function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("fullname").value;
+
+            document.getElementById("success").style.display = "block";
+
+            alert(
+                "Thank you, " + name +
+                "! Your registration has been received."
+            );
+        }
+    );
+
+    document.getElementById("registration-form").addEventListener(
+        "reset",
+        function() {
+            document.getElementById("success").style.display = "none";
+        }
+    );
+</script>
+```
+
+</body>
+</html>
